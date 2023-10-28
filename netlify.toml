@@ -2,6 +2,33 @@
 	publish = "_site"
 	command = "npm run build"
 
+# redirect to english, japanese landing pages.
+
+[[redirects]]
+  from = "/"
+  to = "/ja"
+  status = 302
+  force = true
+  conditions = {Language = ["ja"]}
+
+[[redirects]]
+  from = "/"
+  to = "/en"
+  status = 302
+  force = true
+
+# redirect the 404 pages to your specific variant.
+
+[[redirects]]
+  from = "/ja/*"
+  to = "/ja/404"
+  status = 404
+
+[[redirects]]
+  from = "/en/*"
+  to = "/en/404"
+  status = 404
+
 [[plugins]]
 
 	# Opt-in to the Netlify Lighthouse plugin (choose one):
