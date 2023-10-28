@@ -90,6 +90,8 @@ module.exports = function(eleventyConfig) {
 			console.log(value);
 	});
 
+	eleventyConfig.addFilter("slugify", require("limax"));
+
 	// Customize Markdown library settings:
 	eleventyConfig.amendLibrary("md", mdLib => {
 		mdLib.use(markdownItAnchor, {
